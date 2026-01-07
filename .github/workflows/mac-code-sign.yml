@@ -33,7 +33,5 @@ jobs:
         with:
           input_path: dist/AxonIvyDesigner.app
           output_path: dist/AxonIvyDesigner-signed.app
-          filter_include: |
-            .*\.jnilib$
-            .*\.dylib$
+          sign_args: --filter-include '.*\.jnilib$' --filter-include '.*\.dylib$'
      
