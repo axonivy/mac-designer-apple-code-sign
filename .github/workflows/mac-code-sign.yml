@@ -23,8 +23,13 @@ jobs:
            url: https://developer.axonivy.com/permalink/nightly-13.2/axonivy-designer-linux.zip
            destination: /tmp/downloads-cache/axonivy-designer-linux-nightly.zip
 
+      - name: Unzip
+        run: |
+          mkdir -p dist
+          unzip /tmp/downloads-cache/axonivy-designer-linux-nightly.zip -d dist
+
       - name: Sign Axon Ivy Designer
-      - uses: indygreg/apple-code-sign-action@v1
+        uses: indygreg/apple-code-sign-action@v1
         with:
           input_path: AxonIvyDesigner.app
           output_path: dist/AxonIvyDesigner.app
