@@ -20,13 +20,13 @@ jobs:
       - name: Download Axon Ivy Designer
         uses: ethanjli/cached-download-action@v0.1.3
         with:
-           url: https://developer.axonivy.com/permalink/nightly-13.2/axonivy-designer-linux.zip
-           destination: /tmp/downloads-cache/axonivy-designer-linux-nightly.zip
+           url: https://developer.axonivy.com/permalink/nightly-13.2/axonivy-designer-macos-beta.zip
+           destination: /tmp/downloads-cache/axonivy-designer-macos-nightly.zip
 
       - name: Unzip
         run: |
           mkdir -p dist
-          unzip /tmp/downloads-cache/axonivy-designer-linux-nightly.zip -d dist
+          unzip /tmp/downloads-cache/axonivy-designer-macos-nightly.zip -d dist
 
       - name: Sign Axon Ivy Designer
         uses: indygreg/apple-code-sign-action@v1
